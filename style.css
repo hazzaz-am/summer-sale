@@ -1,0 +1,292 @@
+:root {
+	--clr-primary-400: hsl(316, 79%, 53%);
+	--clr-primary-500: hsl(316, 79%, 45%);
+	--clr-secondary-400: hsl(52, 66%, 93%);
+	--clr-secondary-500: hsl(45, 100%, 51%);
+	
+
+	--clr-neutral-400: hsl(0, 0%, 100%);
+	--clr-neutral-500: hsl(0, 0%, 97%);
+	--clr-neutral-700: hsl(0, 0%, 80%);
+	--clr-neutral-600: hsl(0, 0%, 20%);
+	--clr-neutral-800: hsl(0, 0%, 7%);
+
+	--fw-bold: 900;
+	--fw-semi-bold: 600;
+	--fw-medium: 500;
+	--fw-regular: 400;
+
+	--ff-base: "Work Sans", sans-serif;
+
+	--fs-body: 1.5rem;
+	--fs-small: 1.25rem;
+	--fs-heading: 3.625rem;
+	--fs-title: 2.5rem;
+	--fs-sale: 2rem;
+}
+
+/* // https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+/* Set core body defaults */
+body {
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+	max-width: 100%;
+	display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* utility styling */
+
+body {
+	font-size: var(--fs-body);
+	font-family: var(--ff-base);
+	color: var(--clr-neutral-800);
+	background-color: var(--clr-neutral-500);
+}
+
+.container {
+	max-width: 1280px;
+	margin: auto;
+}
+
+.flex-group {
+	display: flex;
+}
+
+.btn {
+	background-color: var(--clr-primary-400);
+	font-weight: var(--fw-semi-bold);
+	color: var(--clr-neutral-400);
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	font-size: var(--fs-small);
+	padding: 14px 26px;
+	cursor: pointer;
+	transition: .4s;
+}
+
+.btn:hover {
+	background-color: var(--clr-primary-500);
+}
+
+.title {
+	font-size: var(--fs-title);
+	text-transform: capitalize;
+	font-weight: var(--fw-semi-bold);
+	color: var(--clr-neutral-800);
+	margin-bottom: 30px;
+}
+
+.product__name {
+	font-size: var(--fs-small);
+	color: var(--clr-neutral-800);
+	font-weight: var(--fw-semi-bold);
+}
+
+.product__price {
+	font-size: var(--fs-small);
+	font-weight: var(--fw-regular);
+	color: var(--clr-neutral-600);
+}
+
+/* general styling */
+/* banner */
+.banner-area {
+	background-color: var(--clr-secondary-400);
+	min-height: 100vh;
+}
+
+.banner.flex-group {
+	align-items: center;
+	justify-content: center;
+}
+
+.banner__right-side {
+	width: 600px;
+	height: 600px;
+}
+
+.banner__left-side h3 {
+	font-size: var(--fs-sale);
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 50px;
+	font-weight: var(--fw-medium);
+}
+
+.banner__left-side h1 {
+	font-size: var(--fs-heading);
+	font-weight: var(--fw-bold);
+	text-align: center;
+	width: 600px;
+	margin: auto;
+	line-height: normal;
+	margin-bottom: 60px;
+}
+
+.banner__left-side h1 span {
+	color: var(--clr-primary-400);
+}
+
+.banner__left-side .promo__code {
+	text-align: center;
+}
+
+.banner__left-side .promo__code span {
+	text-transform: capitalize;
+	font-weight: var(--fw-medium);
+}
+
+.banner__left-side .promo__code button {
+	text-transform: uppercase;
+}
+
+/* products */
+
+.products-area {
+	padding: 130px 0;
+}
+
+.products.flex-group {
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.products .products__list {
+	width: 65%;
+}
+
+.products__row {
+	margin-bottom: 65px;
+}
+
+.products__row .title {
+	margin-bottom: 30px;
+}
+
+.products__main {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.single__product {
+	background-color: var(--clr-neutral-400);
+	padding: 10px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.single__product .prodcut__img {
+	padding: 30px;
+	background-color: var(--clr-neutral-500);
+	height: 200px;
+	border-radius: 8px;
+	margin-bottom: 25px;
+}
+
+.single__product .prodcut__img img {
+	margin: auto;
+}
+
+.product__content {
+	text-align: center;
+}
+
+.prodcut__review i {
+	font-size: 18px;
+	color: var(--clr-secondary-500);
+}
+
+.prodcut__cart {
+	padding: 90px 0;
+	width: 30%;
+}
+
+.cupon {
+	background-color: var(--clr-neutral-400);
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.cupon  h3 {
+	font-weight: var(--fw-medium);
+}
+
+.cupon__group {
+	border: 1px solid var(--clr-neutral-700);
+	border-radius: 8px;
+}
+
+.cupon__group input {
+	width: 70%;
+	border: none;
+	outline: none;
+	padding: 8px;
+	border-radius: 8px;
+}
+
+.cupon__group button {
+	border-radius: 0 8px 8px 0;
+	border: 1px solid var(--clr-primary-400);
+}
